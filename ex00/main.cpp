@@ -1,14 +1,13 @@
-#include "BitcoinExcange.hpp"
+#include "BitcoinExchange.hpp"
 
-void ValidateCsvFile()
+int main(int argc, char **argv)
 {
-	std::ifstream inputFile;
-
-	inputFile.open("data.csv");
-	if (!file.is_open())
+	BitcoinExchange btc;
+	if (argc != 2)
 	{
-		std::cout << "file open error" << std::cout <
+		std::cerr << "Usage : ./btc filename" << std::endl;
+		return 1;
 	}
-
-
+	std::string str(argv[1]);
+	btc.excute(str);
 }

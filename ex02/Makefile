@@ -1,8 +1,8 @@
 CPP = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = btc
-SRCS = main.cpp BitcoinExchange.cpp
-HEADER = BitcoinExchange.hpp
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
+NAME = ex02
+SRCS = main.cpp PmergeMe.cpp
+HEADER = PmergeMe.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 .PHONY: all clean fclean re

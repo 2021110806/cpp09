@@ -13,14 +13,12 @@ class BitcoinExchange
 {
 	private:
 		std::map<std::string, float> info;
-		void	readUserInput();
-		bool	ValidateInputTxtFile(std::string &fileName);
-		bool	ValidateCsvFile();
-		bool 	ValidateDate(int year, int month, int day);
-		void	parse();
+		bool	validateInputTxtFile(std::string &fileName);
+		bool	validateCsvFile();
+		bool 	validateDate(std::string s);
+		bool	validateValue(std::string s);
 		void 	csvToMap(std::stringstream &line);
-		void	calcaculate();
-		void	printResult();
+		void	printResult(std::string date, float value);
 
 	
 	public:
@@ -28,5 +26,6 @@ class BitcoinExchange
 		BitcoinExchange(const BitcoinExchange &other);
 		BitcoinExchange& operator=(const BitcoinExchange &other);
 		~BitcoinExchange();
+		void	excute(std::string &file);
 		
 };
